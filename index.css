@@ -14,10 +14,22 @@ html {
     scroll-behavior: smooth;
 }
 
-ul,
-li {
-    list-style: none;
+ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 20px; /* Add padding to align bullets properly */
 }
+ul li {
+    position: relative;
+    padding-left: 20px;
+}
+ul li::before {
+    content: '•'; /* Unicode for a dot-like bullet */
+    position: absolute;
+    left: 0;
+    color: rgb(0, 0, 0); /* Custom bullet color */
+    font-size: 20px; /* Custom bullet size */
+}
+
 
 img {
     width: 100%;
@@ -41,9 +53,20 @@ h4 {
     color: gray;
 }
 
+.main > .con {
+    margin-bottom: 150px; /* Adjust this value to control the margin between parts */
+    padding: 10px;
+
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
 .flexcolumn {
     width: 100%;
-    height: 900px;
+
     display: flex;
     flex-direction: column;
     justify-content: top;
@@ -51,7 +74,7 @@ h4 {
 
 .last {
     width: 100%;
-    height: 700px;
+
     padding-top: 200px;
 }
 
@@ -100,8 +123,9 @@ aside>.active>h1>a {
     margin: 0 auto;
 }
 
+
 .main .one>div {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .username {
@@ -119,12 +143,12 @@ aside>.active>h1>a {
 }
 
 .main .two>div {
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .main .three>.threeitem,
 .main .four>.fouritem {
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 
 .main .three>.threeitem>div,
@@ -177,6 +201,3 @@ aside>.active>h1>a {
     text-align: right;
 }
 
-.main .five>div {
-    margin-bottom: 20px;
-}
